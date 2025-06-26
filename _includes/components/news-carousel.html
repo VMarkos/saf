@@ -1,13 +1,19 @@
 <!-- A carousel that slides across the latest `n` posts (assuming at least `n` posts exist) -->
-{% for post in site.posts limit:include.n %}
-    {% assign previous = forloop.index - 1 | modulo: include.n %}
-    {% assign next = forloop.index + 1 | modulo: include.n %}
-    <ol class="carousel-container">
-	<li id="slide-{{ forloop.index }}" tabindex="0" class="carousel-slide">
-	    <div class="carousel-snapper">
-		<a href="#slide={{ previous }}" class="carousel-previous">Previous slide</a> 
-		<a href="#slide={{ next }}" class="carousel-next">Next slide</a> 
-	    </div>
-	</li>
-    </ol>
-{% endfor %}
+<ul class="carousel-container">
+	{% for post in site.posts limit:include.n %}
+		{% assign current = forloop.index | minus: 1 %}
+		{% assign previous = current | minus: 1 | modulo: include.n %}
+		{% assign next = current | plus: 1 | modulo: include.n %}
+			<li id="slide-{{ current }}" tabindex="0" class="carousel-slide">
+				{% include components/news-card.html
+					url = post.url
+					main_image = post.image
+					main_alt = post.title
+					title = post.title
+					description = post.excerpt
+				%}
+				<a href="#slide-{{ previous }}" class="previous">&#x2039;</a>
+				<a href="#slide-{{ next }}" class="next">&#x203a;</a>
+			</li>
+	{% endfor %}
+</ul>

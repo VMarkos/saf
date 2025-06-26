@@ -4,6 +4,7 @@
   --circle-logo-size: 110px;
   --main-bg: #fff;
   --accent: #222;
+  --sec-accent: #eeeeee;
   --yellow: #ffe600;
   --blue: #1e90ff;
   --footer-bg: #fff;
@@ -141,7 +142,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-.news-card:hover {
+:not(.carousel-slide) > .news-card:hover {
   transform: translateY(-5px);
 }
 
@@ -152,10 +153,16 @@ nav a:hover {
 }
 
 .news-card a {
+	display: flex;
+	flex-direction: column;
     color: inherit;
     text-decoration: none;
     width: 100%;
     height: 100%;
+}
+
+.carousel-slide > .news-card a {
+	flex-direction: row;
 }
 
 .news-card-content {
@@ -598,107 +605,47 @@ footer {
 
 /* Carousel */
 
-carousel-container {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-carousel-container li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.carousel-container {
+	display: flex;
+	overflow-x: hidden;
 }
 
 .carousel-slide {
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    background-color: #f99;
-    counter-increment: item;
+	scroll-margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	width: 100%;
+	height: auto;
+	position: relative;
 }
 
-.carousel-snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
+.carousel-slide a {
+	font-size: 56pt;
 }
 
-/* Animations */
-
-@keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
+.carousel-slide .next {
+	dipslay: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	right: 0;
+	padding-right: 10px;
+	height: 100%;
+	opacity: 0;
 }
 
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
- 99% {
-    left: 0;
-  }
+.carousel-slide .previous {
+	left: 0;
+	padding-left: 10px;
+	height: 100%;
+	opacity: 0;
+	transition-duration: 500ms;
 }
 
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
-
-@media (hover: hover) {
-  .carousel-snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel-slide:last-child .carousel-snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel-snapper {
-    animation-name: none;
-  }
+.next:hover, .previous:hover {
+	opacity: 1;
 }
