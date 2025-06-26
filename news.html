@@ -1,0 +1,18 @@
+---
+layout: default
+title: Ανακοινώσεις / Νέα
+permalink: /news.html
+---
+
+  <main>
+    <div class="news-grid">
+		{% for post in site.posts %} 
+		{% include components/news-card.html
+				main_image = post.image
+				main_alt = post.title
+				title = post.title
+				description = post.excerpt
+		%}
+		{% endfor %}
+    </div>
+  </main>
