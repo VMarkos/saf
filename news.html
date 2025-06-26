@@ -4,10 +4,11 @@ title: Ανακοινώσεις / Νέα
 permalink: /news.html
 ---
 
-  <main>
+<section>
     <div class="news-grid">
 		{% for post in site.posts %} 
 		{% include components/news-card.html
+				url = post.url
 				main_image = post.image
 				main_alt = post.title
 				title = post.title
@@ -15,4 +16,4 @@ permalink: /news.html
 		%}
 		{% endfor %}
     </div>
-  </main>
+</section>
