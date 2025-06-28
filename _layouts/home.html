@@ -1,0 +1,21 @@
+---
+layout: root
+title: page.title
+---
+<!-- Home page layout, single static page with a full-width hero, a news gallery and a photo gallery -->
+{% include components/logo-hero.html
+	image = page.hero_image
+%}
+<!-- -->
+{% include components/logo-header.html title = "ΑΝΑΚΟΙΝΩΣΕΙΣ/ΝΕΑ" %}
+<!-- -->
+<section class="max-width-section">
+	{% include components/news-carousel.html
+		n = page.news_number	
+	%}
+</section>
+<!-- -->
+{% include components/logo-header.html title = "ΑΡΧΕΙΟ" %}
+<!-- -->
+{{ content }}
+<!-- End of home page layout -->

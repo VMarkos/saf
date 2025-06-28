@@ -1,10 +1,5 @@
-<!doctype html>
-<html lang="el">
-	{% include head-generic.html %}
-	<body>
-		{% include header-generic.html %}
-		{% include components/logo-header.html title = page.title %}
-		{{ content }}
-		{% include footer-generic.html %}
-	</body>
-</html>
+---
+layout: root
+---
+{% include components/logo-header.html title = page.title %}
+{{ content }}

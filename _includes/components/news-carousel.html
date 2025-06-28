@@ -12,8 +12,8 @@
 					title = post.title
 					description = post.excerpt
 				%}
-				<div class="nav previous"><a href="#slide-{{ previous }}">&#x2039;</a></div>
-				<div class="nav next"><a href="#slide-{{ next }}">&#x203a;</a></div>
+				<div class="nav previous"><a id="slide-anchor-prev-{{ current }}" href="#slide-{{ previous }}">&#x2039;</a></div>
+				<div class="nav next"><a id="slide-anchor-next-{{ current }}" href="#slide-{{ next }}">&#x203a;</a></div>
 			</li>
 	{% endfor %}
 </ul>
