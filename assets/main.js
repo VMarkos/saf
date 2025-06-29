@@ -1,9 +1,10 @@
-function fixHero() {
-	const heroImg = document.getElementById("hero-img");
-	let heroW, heroH;
-	const heroImg.addEventListener("load", (e) => {
-		heroW = this.width;
-		heroH = this.height;
-	});
-	
+const globals = {
+	n: 4,
+	current: 0,
+	previous: 3,
+	next: 1,
+};
+
+function carouselMoveRight(e) {
+	// Use globals to play around...
 }

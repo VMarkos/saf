@@ -637,6 +637,14 @@ footer {
 
 /* Carousel */
 
+.carousel-nav-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
 .carousel-container {
 	display: flex;
 	overflow-x: hidden;
@@ -654,36 +662,45 @@ footer {
 	position: relative;
 }
 
-.carousel-slide .nav {
-	position: absolute;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 10%;
-	height: 100%;
-	background-color: white;
-	opacity: 0;
-	transition-duration: 500ms;
+.carousel-nav-container .nav {
+	font-size: 40pt;
+	vertical-align: baseline;
+	cursor: pointer;
 }
 
-.carousel-slide .nav:hover {
-	opacity: 0.8;
+.carousel-nav-container .next:hover {
+	animation-name: pop-right;
+	animation-duration: 500ms;
 }
 
-.carousel-slide .previous {
-	left: 0;
+.carousel-nav-container .previous:hover {
+	animation-name: pop-left;
+	animation-duration: 500ms;
 }
 
-.carousel-slide .next {
-	right: 0;
+@keyframes pop-right {
+	0% {
+		transform: translateX(0%);
+	}
+	50% {
+		transform: translateX(10%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
 }
 
-.carousel-slide > .nav > a {
-	text-decoration: none;
-	font-size: 60pt;
-	color: var(--accent);
+
+@keyframes pop-left {
+	0% {
+		transform: translateX(0%);
+	}
+	50% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
 }
 
 /*
