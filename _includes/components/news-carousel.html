@@ -1,7 +1,7 @@
 <!-- A carousel that slides across the latest `n` posts (assuming at least `n` posts exist) -->
 <div class="carousel-nav-container">
 	<div id="carousel-previous" class="nav previous">&#x21fd;</div>
-	<ul class="carousel-container">
+	<ul id="carousel-container" class="carousel-container">
 		{% for post in site.posts limit:include.n %}
 			{% assign current = forloop.index | minus: 1 %}
 			{% assign previous = current | minus: 1 | modulo: include.n %}

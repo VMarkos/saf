@@ -29,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  scroll-behavior: smooth;
 }
 
 /* Header Styles */
@@ -647,9 +648,9 @@ footer {
 
 .carousel-container {
 	display: flex;
-	overflow-x: hidden;
+	overflow-x: hidden; 
 	scroll-behavior: smooth;
-	overflow-anchor: auto;
+	/* overflow-anchor: auto; */
 }
 
 .carousel-slide {
@@ -660,6 +661,7 @@ footer {
 	width: 100%;
 	height: auto;
 	position: relative;
+	scroll-behavior: smooth;
 }
 
 .carousel-nav-container .nav {
