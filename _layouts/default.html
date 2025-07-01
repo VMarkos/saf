@@ -1,5 +1,6 @@
 ---
 layout: root
 ---
-{% include components/logo-header.html title = page.title %}
+{% assign page_slug = page.title | slugify %}
+{% include components/logo-header.html title=page.title anchor=page_slug %}
 {{ content }}

@@ -7,7 +7,7 @@ title: page.title
 	image = page.hero_image
 %}
 <!-- -->
-{% include components/logo-header.html title = "ΑΝΑΚΟΙΝΩΣΕΙΣ/ΝΕΑ" %}
+{% include components/logo-header.html title = "ΑΝΑΚΟΙΝΩΣΕΙΣ/ΝΕΑ" anchor = "news" %}
 <!-- -->
 <section class="max-width-section">
 	{% include components/news-carousel.html
@@ -15,7 +15,10 @@ title: page.title
 	%}
 </section>
 <!-- -->
-{% include components/logo-header.html title = "ΑΡΧΕΙΟ" %}
+{% include components/logo-header.html title = "ΑΡΧΕΙΟ" anchor = "archive" %}
 <!-- -->
+<section class="max-width-section">
+	{% include components/image-gallery.html %}
+</section>
 {{ content }}
 <!-- End of home page layout -->

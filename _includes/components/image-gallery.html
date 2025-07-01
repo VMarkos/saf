@@ -1,0 +1,13 @@
+<!-- Image gallery component for home page -->
+<div class="image-gallery-container">
+	{% assign i = 0 %}
+	{% for image in site.static_files %}
+		{% if image.path contains 'archive' %}
+			<div id="archive-image-{{ i }}" class="image-wrapper">
+				<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.path }}" />
+			</div>
+			{% assign i = i | plus: 1 %}
+		{% endif %}
+	{% endfor %}
+</div>
+<!-- End of image gallery -->
