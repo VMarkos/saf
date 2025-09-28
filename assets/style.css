@@ -214,6 +214,7 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
+  z-index: 10;
 }
 
 .footer-col {
