@@ -22,8 +22,8 @@ title: Stray Art Festival
 email: your-email@example.com
 description: >-
   Επίσημη ιστοσελίδα του Stray Art Festival. Νέα, πληροφορίες, συμμετοχές και επικοινωνία.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/saf" # the subpath of your site, e.g. /blog
+url: "https://vmarkos.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: strayartfestival
 github_username:  strayartfestival
 
